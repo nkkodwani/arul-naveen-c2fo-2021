@@ -1,0 +1,7 @@
+try:
+    number = int(input("Enter a number: "))
+    print(number)
+except ZeroDivisionError:
+    print("Zero division error")
+except ValueError:
+    print("Invalid Input")
