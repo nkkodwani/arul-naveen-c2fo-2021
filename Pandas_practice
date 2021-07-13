@@ -1,0 +1,9 @@
+import pandas as pd
+import numpy as np
+#pd.read_csv('~/Documents/Test_Salary_Table.csv')
+
+
+
+df_unsorted = pd.read_csv('~/Documents/Test_Salary_Table.csv')
+df_sorted = df_unsorted.sort_values(by="salary")
+print(df_unsorted['Nameofemployee'][df_unsorted['companyname']=='Sams'])
