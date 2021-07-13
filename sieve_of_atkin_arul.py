@@ -11,6 +11,7 @@ if limit <= 3:
         print(prime_numbers[0])
     elif limit == 3:
         print(prime_numbers)
+    cont = False
 
 n = 3
 
@@ -42,7 +43,8 @@ pseudocode:
 - create variable (n) that will increase and if prime will be added to list 
 - make sure list stops growing when n crosses limit
     - if n = limit: check if n is prime then add to list; stop loop
-    - else: increase n, check if n is prime then add to list if yes, repeat loop   
+    - else: increase n, check if n is prime then add to list if yes, repeat loop  
+- print the list at the end 
 '''
 
 
