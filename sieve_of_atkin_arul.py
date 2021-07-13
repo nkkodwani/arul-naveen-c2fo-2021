@@ -5,10 +5,12 @@ prime_numbers = [2, 3]
 cont = True
 
 if limit <= 3: 
-    if limit == 1:
+    if limit <= 1:
         print("There are no prime numbers <= than 1")
+        prime_numbers = []
     elif limit == 2:
         print(prime_numbers[0])
+        del(prime_numbers[1])
     elif limit == 3:
         print(prime_numbers)
     cont = False
@@ -24,7 +26,9 @@ while(cont == True):
                 break
         if prime == True:
             prime_numbers.append(n)
-        cont = False
+            if n in prime_numbers:
+                del(prime_numbers[-1]) #when limit = a prime number, this gets rid of the duplicate
+        break
     else:
         n+=1
         for d in range (2, (int(n/2 + 1))): #this line can be optimized for runtime
