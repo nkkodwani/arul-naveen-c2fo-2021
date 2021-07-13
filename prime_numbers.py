@@ -14,9 +14,9 @@ elif (n>2):
     while (True):
         i += 1
         status = True
-        #for j in range(2, int(math.sqrt(n) + 1)): #this tests if i is prime and resets the while loop if not prime
-        #for j in range(2, int(n/2 + 1)):
-        for j in range(2, int(i/2 + 1)): #CHECK
+        #for j in range(2, int(math.sqrt(i) + 1)): #sqrt makes answer inaccurate
+            #adi note - instead of setting sqrti, make it x * x < i
+        for j in range(2, int(i/2 + 1)): 
             if (i % j == 0):
                 status = False
                 break
