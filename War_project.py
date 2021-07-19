@@ -1,4 +1,7 @@
-Card_Deck = {
+import random
+
+
+'''Card_Deck = {
     'spades_2' : [2, 'spades'],
     'spades_3' : [3, 'spades'],
     'spades_4' : [4, 'spades'],
@@ -51,8 +54,71 @@ Card_Deck = {
     'diamonds_jack' : [11, 'diamonds'],
     'diamonds_queen' : [12, 'diamonds'],
     'diamonds_king' : [13, 'diaamonds'],
-    'diamonds_ace' : [14, 'diamonds'],
-}
+    'diamonds_ace' : [14, 'diamonds'],'''
+    
+  Card_Deck = {  
+    1 : [2, 'spades'],
+    2 : [3, 'spades'],
+    3 : [4, 'spades'],
+    4 : [5, 'spades'],
+    5 : [6, 'spades'],
+    6 : [7, 'spades'],
+    7 : [8, 'spades'],
+    8 : [9, 'spades'],
+    9 : [10, 'spades'],
+    10 : [11, 'spades'],
+    11 : [12, 'spades'],
+    12 : [13, 'spades'],
+    13 : [14, 'spades'],
+    14 : [2, 'hearts'],
+    15 : [3, 'hearts'],
+    16 : [4, 'hearts'],
+    17 : [5, 'hearts'],
+    18 : [5, 'hearts'],
+    19 : [6, 'hearts'],
+    20 : [7, 'hearts'],
+    21 : [8, 'hearts'],
+    22 : [9, 'hearts'],
+    23 : [10, 'hearts'],
+    24 : [11, 'hearts'],
+    25 : [12, 'hearts'],
+    26 : [13, 'hearts'],
+    27 : [14, 'hearts'],
+    28 : [2, 'clubs'],
+    29 : [3, 'clubs'],
+    30 : [4, 'clubs'],
+    31 : [5, 'clubs'],
+    32 : [6, 'clubs'],
+    33 : [7, 'clubs'],
+    34 : [8, 'clubs'],
+    35 : [9, 'clubs'],
+    36 : [10, 'clubs'],
+    37 : [11, 'clubs'],
+    38 : [12, 'clubs'],
+    39 : [13, 'clubs'],
+    40 : [14, 'clubs'],
+    41 : [2, 'diamonds'],
+    42 : [3, 'diamonds'],
+    43 : [4, 'diamonds'],
+    44 : [5, 'diamonds'],
+    45 : [6, 'diamonds'],
+    46 : [7, 'diamonds'],
+    47 : [8, 'diamonds'],
+    48 : [9, 'diamonds'],
+    49 : [10, 'diamonds'],
+    50 : [11, 'diamonds'],
+    51 : [12, 'diamonds'],
+    52 : [13, 'diaamonds'],
+    53 : [14, 'diamonds'],'''
+  }
+
+
+
+
+
+items =
+
+
 
 
 print(Card_Deck)

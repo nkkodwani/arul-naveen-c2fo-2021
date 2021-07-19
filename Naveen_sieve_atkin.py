@@ -12,7 +12,7 @@ if n == 2:
 
 i = 3
 
-while (value == True): #arul did this for nave
+while (value == True): 
     status = True
     i+=1
     for j in range(2, int(i/2 + 1)):

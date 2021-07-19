@@ -1,12 +1,12 @@
 class Question:
     def __init__(self, prompt, answer):
-        self.prompt == prompt
-        self.answer == answer
+        self.prompt = prompt
+        self.answer = answer
 
 
 question_prompts = [
-    "what are the color of apples?\n(a) red/green\n(b) purple\n(c) orange\n\n"
-    "What are the color of bananas?\n(a) Teal\n(b) Magenta\n(b) Yellow\n\n"
+    "what are the color of apples?\n(a) red/green\n(b) purple\n(c) orange\n\n",
+    "What are the color of bananas?\n(a) Teal\n(b) Magenta\n(b) Yellow\n\n",
     "what are the color of strawberries?\n(a) Yellow\n(b0 Red\n(c0 Blue\n\n"
 ]
 
@@ -20,14 +20,16 @@ questions = [
 def run_test(questions):
     score = 0
     for question in questions:
-        answer = input(question.prompts)
+        answer = input(question_prompts)
         if answer == question.answer:
             score = + 1
         print(~f"you got" + str(score) + '/' + str(len(questions)) + 'correct')
 
+print(run_test)
 
-question_prompts = [
+
+'''question_prompts = [
     "what are the color of apples?\n(a) red/green\n(b) purple\n(c) orange\n\n"
     "What are the color of bananas?\n(a) Teal\n(b) Magenta\n(b) Yellow\n\n"
     "what are the color of strawberries?\n(a) Yellow\n(b0 Red\n(c0 Blue\n\n"
-]
+]'''
