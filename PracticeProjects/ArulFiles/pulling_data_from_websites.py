@@ -1,12 +1,14 @@
 import requests               #gets html data from a website
 from bs4 import BeautifulSoup #this is how python reads and understands the html data
 import pandas as pd
+import numpy as np
 
 r = requests.get('https://mmr2410.com/robots') #requests info from 2410 server
 mmr_html = r.text #stores html of the 2410 page as a string
 soup = BeautifulSoup(mmr_html, 'lxml') #^
 robot_year = []
 robot_name = []
+competitions = []
 
 '''for team in soup.find_all('div', class_ = 'profile'):
     teammate_name = team.p.text 
@@ -30,8 +32,11 @@ while(status == True):
 data = { 'Robot Year' : robot_year,
         'Robot Name' : robot_name
 }
+
 df = pd.DataFrame(data, columns = ['Robot Year', 'Robot Name'])
-print(f"{df}\n")
-df.to_csv('~/Desktop/robots_years_and_names.csv')
+df.set_index('Robot Year', inplace=True) #sets the index of the DF to be the season year
+#print(f"{df}\n")
+n=int(input("What year would you like to get the robot name? "))
+print(df.loc[[f'{n}'], ['Robot Name']]) #prints the name of a robot for a specific year (2020)
 
 
