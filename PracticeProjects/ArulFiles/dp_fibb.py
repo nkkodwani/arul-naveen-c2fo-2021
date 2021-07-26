@@ -10,10 +10,11 @@ import numpy as np #this will be for arrays
 
 #fibonnaci recursively:
 def fibb(n):
-    if n <= 2:
-        return 1
+    if n <= 2: #constant time
+        return 1 #constant time
     else: 
-        return fibb(n-1) + fibb(n-2) #to make this dynamic programming, save repeated results in an array
+        return fibb(n-1) + fibb(n-2) #2^n complexity
+        #to make this dynamic programming, save repeated results in an array
 
 n = int(input("Input a number: "))
 print("Recursive:")
@@ -22,13 +23,13 @@ print(f"\t{fibb(n)}")
 
 #fibonnaci using dynamic programming:
 def fibbDP(n):
-    a = 2
-    fibb = np.empty(n + 1)
-    fibb[0] = 0
-    fibb[1] = 1
-    while a <= n:
-        fibb[a] = fibb[a-1] + fibb[a-2]
-        a += 1
-    return fibb[n]
+    a = 2 #constant
+    fibb = np.empty(n + 1) #constant
+    fibb[1] = 1 #constant
+    while a <= n: #O(n) time
+        fibb[a] = fibb[a-1] + fibb[a-2] #constant
+        a += 1 #constant
+    return fibb[n] #constant
 
-
+print("Dynamic Programming:")
+print(f"\t{fibbDP(n)}")
