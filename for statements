@@ -1,3 +1,0 @@
-friends = ["Jim", "Karin", "Kevin"]
-for index in range(len(friends)):
-    print(friends[index])
