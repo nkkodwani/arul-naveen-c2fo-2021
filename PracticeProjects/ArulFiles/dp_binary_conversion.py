@@ -4,39 +4,20 @@
 # Example: 100 --> 101 takes one step
 # Example 2: 10001 --> 11111 takes three steps
 ######
-import numpy as np
 
 def binaryEditDP(num1, num2):
     
-    m = '{:032b}'.format(num1) #bin(num1)
-    n = '{:032b}'.format(num2 )# bin(num2)
-    a = str(m)
-    b = str(n)
-    i = 0
-    change = 0
+    m = '{:032b}'.format(num1) #converts num1 to binary
+    n = '{:032b}'.format(num2 )# converts num2 to binary
+    z = num1 ^ num2 #ex-or operator counts differnces: each different digit becomes a '1' in z
+    count_diff = 0
+    while z != 0:
+        if (z & 1): #if digit in last place of z has a 1 in it: ++ to count_differences variable
+            count_diff += 1
+        z = z >> 1 #right shift z to check next digit
+    return count_diff
 
-    if len(a) == 0:
-        return len(b)
-    if len(b) == 0:
-        return len(a)
-    if b == a:
-        return 0
-
-    while i < 32:
-        if a[i] != b[i]:
-            change += 1
-        i += 1
-
-    return change
-
-num1 = 8972345902943
-num2 = 2430895092435
-num1_bit = '{:032b}'.format(num1)
-num2_bit = '{:032b}'.format(num2)
+num1 = 17
+num2 = 31 #Example 2: 10001 --> 1111 takes three steps
 
 print(binaryEditDP(num1, num2))
-
-
-#Trying to do binary edit problem using an array
-a1 = np.empty((32, 32))
-print(a1)
