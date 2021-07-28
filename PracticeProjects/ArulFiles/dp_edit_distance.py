@@ -31,7 +31,7 @@ def edit_dist(str1, str2):
                                 a1[i][j-1] #up = insert a char
                                 ) # +1 to perform insert/replace/del
         
-    return a1, a1[i][j] #returns the final spot in array
+    return a1, a1[m][n] #returns the final spot in array
 
     
 str1 = str(input("String 1: "))
