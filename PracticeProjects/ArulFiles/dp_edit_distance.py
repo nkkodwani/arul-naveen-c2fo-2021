@@ -18,7 +18,7 @@ def edit_dist(str1, str2):
             if i == 0: #first row
                 a1[i][j] =  j# fill in with length of str2
             elif j == 0: #first column
-                a1[i][j] == i #fill in with length of str1
+                a1[i][j] = i #fill in with length of str1 
             # these previous two operations represent # of ops. 
             # creating the string from empty character
             elif str1[i-1] == str2[j-1]: 
