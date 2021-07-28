@@ -17,7 +17,9 @@ def binaryEditDP(num1, num2):
         z = z >> 1 #right shift z to check next digit
     return count_diff
 
-num1 = 17
-num2 = 31 #Example 2: 10001 --> 1111 takes three steps
+num1 = 9
+num2 = 548 #Example 2: 10001 --> 1111 takes three steps
 
+print('{:032b}'.format(num1))
+print('{:032b}'.format(num2))
 print(binaryEditDP(num1, num2))
