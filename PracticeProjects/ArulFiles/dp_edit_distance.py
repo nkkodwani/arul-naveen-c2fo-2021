@@ -26,19 +26,19 @@ def edit_dist(str1, str2):
             # if the two characters on index are equal, then 
             # ignore and use moves of prev. character (diag)
             elif str1[i-1] != str2[j-1]:
-                a1[i][j] = min( a1[i-1][j], #left = delete char
-                                a1[i-1][j], #diag = replace char
+                a1[i][j] = 1 + min( a1[i-1][j], #left = delete char
+                                a1[i-1][j-1], #diag = replace char
                                 a1[i][j-1] #up = insert a char
-                                ) + 1 # +1 to perform insert/replace/del
+                                ) # +1 to perform insert/replace/del
         
-    return a1[m][n] #returns the final spot in array
+    return a1, a1[i][j] #returns the final spot in array
 
     
 str1 = str(input("String 1: "))
-str2 = str(input("String 1: "))
-operations = edit_dist(str1, str2)
+str2 = str(input("String 2: "))
+print( edit_dist(str1, str2))
 
-print(f"Editing {str1} to {str2} would take {operations} operations.")
+# print(f"Editing {str1} to {str2} would take {operations} operations.")
 
 
             
