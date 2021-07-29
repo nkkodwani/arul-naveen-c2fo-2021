@@ -9,18 +9,19 @@ Input:
     cut_cost = l
     l = l - cut
 '''
+import numpy as np
 
 def stick_break(l, n: int, cuts: list):
     if l > 999 or l < 2:
         return "Invalid stick length"
     if n > 49:
         return "Invalid number of cuts"
-    
+    a1 = np.empty((len(cuts), len(cuts)))
     
     #cut_cost = l
     # l = l - cut
     
-    return cuts[n-1]
+    return cuts[n-1], a1
     
 
 
