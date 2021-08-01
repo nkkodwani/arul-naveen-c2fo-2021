@@ -40,10 +40,11 @@ for i in range (n):
     cuts.append(c)
 
 #INITIALIZE ARRAY
-a1 = np.array((l+1,l+1))            # is itpossible to make the values infinity instead of empty?
+a1 = np.zeros((l+1,l+1))            # is itpossible to make the values infinity instead of empty?
                                     # the array is 2d. The first index will be start (vertical) and second index will be end (horizontal)
                                     # this allows for all combinations of start/end indexes to be tested 
                                     # What value should I put in this array?
+a1.fill(-1)
     
 # for i in range(l+1):
 #     for j in range(l+1):
@@ -52,7 +53,7 @@ a1 = np.array((l+1,l+1))            # is itpossible to make the values infinity 
 #METHOD
 def cutCost(start: int, end: int): #start index; cuts list; stick size 
     memoizedResult = a1[start][end]
-    if memoizedResult: #fails if value is empty
+    if memoizedResult != -1: #fails if value is empty
         return memoizedResult
 
     length = end - start
