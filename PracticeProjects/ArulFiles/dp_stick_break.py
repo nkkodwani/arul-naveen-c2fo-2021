@@ -21,8 +21,6 @@ Method(startIndex, endIndex):
     
 '''
 import numpy as np
-# import sys
-# sys.setrecursionlimit(1001)
 
 #INPUT: Cuts and length
 cuts = []
@@ -40,41 +38,38 @@ for i in range (n):
     cuts.append(c)
 
 #INITIALIZE ARRAY
-a1 = np.zeros((l+1,l+1))            # is itpossible to make the values infinity instead of empty?
+a1 = np.zeros((l+1,l+1))            # fills array, value will be overwritten by memozied result
                                     # the array is 2d. The first index will be start (vertical) and second index will be end (horizontal)
-                                    # this allows for all combinations of start/end indexes to be tested 
-                                    # What value should I put in this array?
-a1.fill(-1)
-    
-# for i in range(l+1):
-#     for j in range(l+1):
-#         a1[i][j] = 1
+                                    # this allows for all combinations of start/end indexes to be tested
 
 #METHOD
 def cutCost(start: int, end: int): #start index; cuts list; stick size 
-    memoizedResult = a1[start][end]
-    if memoizedResult != -1: #fails if value is empty
+
+    memoizedResult = a1[start][end] #if the calcuation for a specific cut has already been done, then return that result
+    if memoizedResult != 0: 
         return memoizedResult
 
-    length = end - start
+    length = end - start #need to store length of piece being cut as it is factored into the cost
 
-    minCutCost = float('inf')
+    minCutCost = float('inf') 
 
-    for i in range (start, end):
+    for i in range (start+1, end): #needs to start at start+1 because if start is included, line 58 will have infinite recursion
         if i in cuts:
-            cost = length + cutCost(start, i) + cutCost(i, end) #reached max recursion depth here
-            if cost < minCutCost:
+            cost = length + cutCost(start, i) + cutCost(i, end)     # the cost is equal to the length of the stick + the cost of the cuts. 
+                                                                    # this line uses recursion to calculate the cost of each cut 
+                                                                    # each time recusrion is used, it adds one more cut
+                                                                    # therefore it recurses one time for each cut inputted
+            if cost < minCutCost:  #replace mincutcost with new minimum cost
                 minCutCost = cost
 
-    if minCutCost == float('inf'):
+    if minCutCost == float('inf'): #if none of the values in range(start, end) are in cuts list, make mincutcost != 'inf'
         minCutCost = 0
 
-    a1[start][end] = minCutCost
+    a1[start][end] = minCutCost #save the minimum cut cost in the array
 
     return minCutCost
 
-#INPUT
-
+#Now just test method
 print(cutCost(0, l))
 
 
