@@ -6,17 +6,15 @@ Input:
         must be in increasing order
 
 Method(startIndex, endIndex):
-    define where cuts should be made
-    create 2d array of integers l columns l rows
-    memoize result in array arr[start][end]
+    create 2d array of integers l+1 columns l+1 rows
+    check if arr[start][end] has already been calculated
         if result for specific cut already exists: return that result
-    length = end - start
-    subcutcost = infinity
-    for i in range (indexstart, indexend):
+    subcutcost = infinity 
+    for i in range (start, end):
         if i in [cuts]
             cost = length + cutMethod(start, i) + cutMethod(i, end)
             replace subcutcost if cost < subcutcost
-
+    store subcutcost in arr[start][end] - only stores if the value is empty
     return subcutcost
     
 '''
@@ -53,7 +51,7 @@ def cutCost(start: int, end: int): #start index; cuts list; stick size
 
     minCutCost = float('inf') 
 
-    for i in range (start+1, end): #needs to start at start+1 because if start is included, line 58 will have infinite recursion
+    for i in range (start+1, end): #needs to start at start+1 because if start is included, line 56 will have infinite recursion
         if i in cuts:
             cost = length + cutCost(start, i) + cutCost(i, end)     # the cost is equal to the length of the stick + the cost of the cuts. 
                                                                     # this line uses recursion to calculate the cost of each cut 
@@ -66,7 +64,7 @@ def cutCost(start: int, end: int): #start index; cuts list; stick size
         minCutCost = 0
 
     a1[start][end] = minCutCost #save the minimum cut cost in the array
-
+    
     return minCutCost
 
 #Now just test method
