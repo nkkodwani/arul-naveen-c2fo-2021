@@ -84,7 +84,7 @@ def allocate_mailboxes(houses_pos:list, k:int):
             minDistHouse = []
             #record total distance of mailbox from houses in a1 array (see formula at end of pseudocode - this will fill array)
             for house_pos in houses_pos:
-                if abs(house_pos - mb1_pos) < abs(house_pos - mb2_pos):
+                if abs(house_pos - mb1_pos) < abs(house_pos - mb2_pos): #if the house is closer to mb1, then use mb1
                     minDistHouse.append(abs(house_pos - mb1_pos))
                 else: 
                     minDistHouse.append(abs(house_pos - mb2_pos))
@@ -94,4 +94,8 @@ def allocate_mailboxes(houses_pos:list, k:int):
 
 
 print(allocate_mailboxes(houses_pos, k))
+
+'''
+
+'''
     
